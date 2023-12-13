@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <locale>
 #include <string>
 
@@ -42,21 +42,23 @@ int main() {
                     break;
                 }
             }
-            else {
-                if (predl[i] == alphabet2[j]) {
-                    if (j < k) {
-                        predl[i] = alphabet2[26 - k + j];
-                        break;
-                    }
-                    else {
-                        predl[i] = alphabet2[j - k];
-                        break;
-                    }
+        }
+    }
+
+    for (int i = 0; i < predl.size(); i++) {
+        for (int j = 0; j < 26; j++) {
+            if (predl[i] == alphabet2[j]) {
+                if (j < k) {
+                    predl[i] = alphabet2[26 - k + j];
+                    break;
+                }
+                else {
+                    predl[i] = alphabet2[j - k];
+                    break;
                 }
             }
         }
     }
 
     cout << "Расшифрованное предложение: " << predl;
-
 }
